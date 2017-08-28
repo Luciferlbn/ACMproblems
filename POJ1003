@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int main(){
+	float length,cardlength=0,minlen=0.01,maxlen=5.20;
+	int mincalnum,maxcalnum;
+	cin>>length;
+	while(length!=0){
+		mincalnum=1,maxcalnum=278;
+		while(mincalnum!=maxcalnum){
+			if(mincalnum>=maxcalnum-1)break;
+			//cout<<maxcalnum<<endl;
+			if(length<0.5){
+				maxcalnum=1;
+				break;
+			}
+			cardlength=0;
+			for(int i=1;i<=(mincalnum+maxcalnum)/2;i++){
+				cardlength+=1.0/(float)(i+1);
+				//cout<<cardlength<<endl;
+			}
+			if(length<cardlength) maxcalnum = (mincalnum+maxcalnum)/2;
+			else if(length>cardlength) mincalnum = (mincalnum+maxcalnum)/2;
+			else break;
+		}
+		cout<<maxcalnum<<" card(s)"<<endl;
+		cin>>length;
+	}
+	return 0;
+} 
