@@ -1,0 +1,27 @@
+#include <iostream>
+#include<stdio.h>
+ #include <string.h>
+int value(char c){
+	int num;
+	if(c!=' ')num=(int)c-64;
+	else num=0;
+	return num;
+}
+using namespace std;
+int main(){
+	char c[256];
+	memset(c,0,sizeof(c));
+	int valuere=0,n=0;
+	while(c[0]!='#'){
+		valuere=0;
+		n=0;	
+		memset(c,0,sizeof(c));
+		gets(c);
+		while(c[n]!='\0'&&c[n]!='#'){
+			valuere+=value(c[n])*(n+1);
+			n++;
+		}
+		if(c[0]!='#')cout<<valuere<<endl;
+	}
+	return 0;
+}
