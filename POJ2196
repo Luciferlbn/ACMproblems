@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main(){
+	int num=2992;
+	int a,ten,hun,thou,valueten,valuetwe,valuesix;
+	while(num<10000){
+		thou=num/1000;
+		hun=(num-thou*1000)/100;
+		ten=(num-thou*1000-hun*100)/10;
+		a=num-thou*1000-hun*100-ten*10;
+		valueten=thou+hun+ten+a;
+		thou=num/1728;
+		hun=(num-1728*thou)/144;
+		ten=(num-1728*thou-hun*144)/12;
+		a=num-1728*thou-hun*144-ten*12;
+		valuetwe=thou+hun+ten+a;
+		thou=num/4096;
+		hun=(num-4096*thou)/256;
+		ten=(num-4096*thou-hun*256)/16;
+		a=num-4096*thou-hun*256-ten*16;
+		valuesix=thou+hun+ten+a;
+		if(valueten==valuetwe&&valueten==valuesix)cout<<num<<endl;
+		num++;
+	}
+	return 0;
+}
