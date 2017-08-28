@@ -1,0 +1,18 @@
+#include <iostream>
+#include <math.h>
+#define pie 3.1415926535
+using namespace std;
+int main(){
+	int num;
+	float x,y;
+	cin>>num;
+	int i=0;
+	while(i<num){
+		cin>>x>>y; 
+		int year = ceil((x*x+y*y)*pie/100);//向上取整函数  floor（x)为向下取整函数 
+		cout<<"Property "<<i+1<<": This property will begin eroding in year "<<year<<"."<<endl;
+		i++;
+	} 
+	cout<<"END OF OUTPUT."; 
+	return 0;
+} 
