@@ -1,0 +1,24 @@
+#include<iostream>  
+using namespace std;   
+int main(){  
+	int a[20],n;
+	cin>>a[0];
+	while(a[0]!=-1){
+		n=1;
+		for(;;n++){
+			cin>>a[n];
+			if(a[n]==0)break;
+		}//input a[n] 
+		int sum=0;
+		for(int i=0;i<=n;i++){
+			for(int j=i+1;j<=n;j++){
+				if(a[i]==2*a[j]||a[j]==2*a[i]){
+					sum++;
+				}
+			}
+		}//calculate the number 
+		cout<<sum<<endl;
+		cin>>a[0];
+	}
+    return 0;  
+}  
